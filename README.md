@@ -18,7 +18,7 @@ Nro | Nombre | Legajo | Mail
 ----|--------|--------|------
 1   |Nahuel Pereyra        |29585        |nahuelmpereyra@gmail.com
 2   |Lucas Piergiacomi        |31986        |lg.piergiacomi@gmail.com
-3   |        |        |
+3   |Esteban Matas        |28466        |estebanmatas13@gmail.com
 4   |        |        |
     
 ### Entrega
