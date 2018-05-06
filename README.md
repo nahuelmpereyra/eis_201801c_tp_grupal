@@ -17,7 +17,7 @@ Ejercitar la escritura de código en ambientes colaborativos utilizando una meto
 Nro | Nombre | Legajo | Mail
 ----|--------|--------|------
 1   |Nahuel Pereyra        |29585        |nahuelmpereyra@gmail.com
-2   |        |        |
+2   |Lucas Piergiacomi        |31986        |lg.piergiacomi@gmail.com
 3   |        |        |
 4   |        |        |
     
