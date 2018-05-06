@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/nahuelmpereyra/eis_201801c_tp_grupal.svg)](https://travis-ci.org/nahuelmpereyra/eis_201801c_tp_grupal)
+
+
 ## Objetivos del TP grupal
 Ejercitar la escritura de código en ambientes colaborativos utilizando una metodología de diseño guiada por pruebas ejecutanto un flujo de trabajo que facilite la integración frecuente de código.
 
@@ -13,7 +16,7 @@ Ejercitar la escritura de código en ambientes colaborativos utilizando una meto
 
 Nro | Nombre | Legajo | Mail
 ----|--------|--------|------
-1   |        |        |
+1   |Nahuel Pereyra        |29585        |nahuelmpereyra@gmail.com
 2   |        |        |
 3   |        |        |
 4   |        |        |
