@@ -10,6 +10,7 @@ public class PacmanStepdefs {
     private Pacman pacman;
     private Comestible biscuit;
     private Comestible fruta;
+    private Fantasma fantasma;
 
 
     @Given("^Un nuevo Pacman$")
@@ -43,10 +44,23 @@ public class PacmanStepdefs {
     }
 
     @Then("^El pacman suma cinco puntos$")
-    public void pacmanSumaCincoPuntos() {
-        assertThat(pacman.puntos).isEqualTo(5);
+    public void pacmanSumaCincoPuntos() { assertThat(pacman.puntos).isEqualTo(5);
+    }
+    
+    @Given("^Un fantasma$")
+    public void unFantasma() {
+        fantasma= new Fantasma();
     }
 
+    @When("^Pacman choca un fantasma$")
+    public void pacmanChocaUnFantasma() {
+        pacman.chocar(fantasma);
+    }
+
+    @Then("^El pacman muere$")
+    public void elPacmanMuere() {
+        assertThat(pacman.vida).isEqualTo(0);
+    }
 
 }
 

@@ -1,4 +1,4 @@
- Feature: Pacman
+  Feature: Pacman
 
   Scenario: Pacman come un biscuit
     Given Un nuevo Pacman
@@ -13,3 +13,8 @@
     Then El pacman suma cinco puntos
 
 
+Scenario: Pacman choca con un fantasma
+    Given Un nuevo Pacman
+    Given Un fantasma
+    When Pacman choca un fantasma
+    Then El pacman muere
