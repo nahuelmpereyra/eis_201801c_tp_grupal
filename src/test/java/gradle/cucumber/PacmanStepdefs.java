@@ -22,12 +22,6 @@ public class PacmanStepdefs {
         biscuit = new Biscuit();
     }
 
-    @Given("^Una Fruta$")
-    public void nuevaFruta() throws Throwable {
-        fruta = new Fruta();
-    }
-
-
     @When("^Pacman come un biscuit$")
     public void pacmanComeUnBiscuit() {
         pacman.comer(biscuit);
@@ -38,10 +32,21 @@ public class PacmanStepdefs {
         assertThat(pacman.puntos).isEqualTo(1);
     }
 
-    @When("^Pacman come una fruta^")
-    public void pacmanComeUnaFruta() {pacman.comer(fruta);}
+    @Given("^Una fruta$")
+    public void unaFruta() {
+        fruta = new Fruta();
+    }
 
-    @Then("^El pacman suma 5 puntos$")
-    public void pacmanSuma5Puntos() { assertThat(pacman.puntos).isEqualTo(5);}
+    @When("^Pacman come una fruta$")
+    public void pacmanComeUnaFruta() {
+        pacman.comer(fruta);
+    }
+
+    @Then("^El pacman suma cinco puntos$")
+    public void pacmanSumaCincoPuntos() {
+        assertThat(pacman.puntos).isEqualTo(5);
+    }
+
+
 }
 
