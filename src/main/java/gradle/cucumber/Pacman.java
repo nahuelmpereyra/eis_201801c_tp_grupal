@@ -3,7 +3,7 @@ package gradle.cucumber;
 public class Pacman {
     Integer puntos = 0;
 
-    public void comer(Biscuit biscuit) {
-        puntos+=biscuit.puntos;
+    public void comer(Comestible comestible) {
+        puntos = puntos + comestible.getPuntos();
     }
 }
