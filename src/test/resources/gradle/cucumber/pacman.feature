@@ -25,3 +25,11 @@ Scenario: Pacman come un pellet
   Given Un juego nuevo
   When Pacman come un Pellet
   Then Los fantasmas se debilitan
+
+Scenario: Pacman choca contra un fantasma debilitado
+  Given Un nuevo Pacman
+  Given Un fantasma debilitado
+  Given Un juego nuevo
+  When Pacman come un fantasma debilitado
+  Then El pacman no muere y el fantasma deja de tener cuerpo
+
