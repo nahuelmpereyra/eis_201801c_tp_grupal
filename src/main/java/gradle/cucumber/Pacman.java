@@ -10,8 +10,12 @@ public class Pacman {
     }
 
     public void chocar(Fantasma fantasma){
+        if(!fantasma.estado.estaDebilitado()) {
             vida=0;
         }
+        else fantasma.estado = new Digerido();
+    }
+
 
     public void comer(Pellet pellet) {game.debilitarFantasmas();}
 

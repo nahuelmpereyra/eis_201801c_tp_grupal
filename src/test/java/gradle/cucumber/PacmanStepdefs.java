@@ -13,6 +13,8 @@ public class PacmanStepdefs {
     private Fantasma fantasma;
     private Pellet pellet;
     private Game game;
+    private Fantasma fantasmaDebilitado;
+
 
 
     @Given("^Un nuevo Pacman$")
@@ -36,7 +38,7 @@ public class PacmanStepdefs {
     }
 
     @Given("^Una fruta$")
-    public void unaFruta() {
+    public void unaFruta() throws Throwable {
         fruta = new Fruta();
     }
 
@@ -50,8 +52,14 @@ public class PacmanStepdefs {
     }
     
     @Given("^Un fantasma$")
-    public void unFantasma() {
+    public void unFantasma() throws Throwable {
         fantasma= new Fantasma();
+    }
+
+    @Given("^Un fantasma debilitado$")
+    public void unFantasmaDebilitado()  throws Throwable{
+        fantasmaDebilitado = new Fantasma();
+        fantasmaDebilitado.estado = new Debilitado();
     }
 
     @When("^Pacman choca un fantasma$")
@@ -65,7 +73,11 @@ public class PacmanStepdefs {
     }
 
     @Given("^Un Pellet$")
-    public void unPellet() { pellet = new Pellet(); }
+    public void unPellet() throws Throwable {
+        pellet = new Pellet();
+    }
+
+
 
     @Given("^Un juego nuevo$")
     public void unJuegoNuevo() {
@@ -78,6 +90,17 @@ public class PacmanStepdefs {
 
     @Then("^Los fantasmas se debilitan$")
     public void losFantasmasSeDebilitan() {assertThat(pacman.game.fantasmasDebilitados()).isEqualTo(4);}
+
+
+
+    @When("^Pacman come un fantasma debilitado$")
+    public void pacmanComeUnFantasmaDebilitado() {
+
+        pacman.chocar(fantasmaDebilitado);
+    }
+
+    @Then("^El pacman no muere y el fantasma deja de tener cuerpo$")
+    public void elPacmanNoMuereYElFantasmaDejDeTenerCuerpo() { assertThat(pacman.vida).isEqualTo(1);}
 
 }
 

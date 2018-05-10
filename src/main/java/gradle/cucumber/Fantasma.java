@@ -1,7 +1,12 @@
 package gradle.cucumber;
 
 public class Fantasma {
-    Boolean estaDebilitado = false;
+
+    EstadoFantasma estado= new Vivo();
+
+    public void debilitar(){
+        estado = new Debilitado();
+    }
 
 
 }
