@@ -18,3 +18,10 @@ Scenario: Pacman choca con un fantasma
     Given Un fantasma
     When Pacman choca un fantasma
     Then El pacman muere
+
+Scenario: Pacman come un pellet
+  Given Un nuevo Pacman
+  Given Un Pellet
+  Given Un juego nuevo
+  When Pacman come un Pellet
+  Then Los fantasmas se debilitan
