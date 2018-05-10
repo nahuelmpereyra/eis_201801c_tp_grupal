@@ -11,6 +11,8 @@ public class PacmanStepdefs {
     private Comestible biscuit;
     private Comestible fruta;
     private Fantasma fantasma;
+    private Pellet pellet;
+    private Game game;
 
 
     @Given("^Un nuevo Pacman$")
@@ -61,6 +63,21 @@ public class PacmanStepdefs {
     public void elPacmanMuere() {
         assertThat(pacman.vida).isEqualTo(0);
     }
+
+    @Given("^Un Pellet$")
+    public void unPellet() { pellet = new Pellet(); }
+
+    @Given("^Un juego nuevo$")
+    public void unJuegoNuevo() {
+        game = new Game();
+        pacman.setGame(game);
+    }
+
+    @When("^Pacman come un Pellet$")
+    public void pacmanComeUnPellet() { pacman.comer(pellet);}
+
+    @Then("^Los fantasmas se debilitan$")
+    public void losFantasmasSeDebilitan() {assertThat(pacman.game.fantasmasDebilitados()).isEqualTo(4);}
 
 }
 
