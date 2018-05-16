@@ -5,17 +5,9 @@ public class Pacman {
     Integer vida= 1;
     Game game;
 
-    public void comer(Comestible comestible) {
-        puntos = puntos + comestible.getPuntos();
-    }
+    public void comer(Comestible comestible) {puntos = puntos + comestible.getPuntos();}
 
-    public void chocar(Fantasma fantasma){
-        if(!fantasma.estado.estaDebilitado()) {
-            vida=0;
-        }
-        else fantasma.estado = new Digerido();
-    }
-
+    public void chocar(Fantasma fantasma){fantasma.chocado(this);}
 
     public void comer(Pellet pellet) {game.debilitarFantasmas();}
 
@@ -23,4 +15,5 @@ public class Pacman {
         this.game = game;
     }
 
+    public void morir() {this.vida = 0;}
 }

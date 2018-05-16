@@ -10,4 +10,9 @@ public class Vivo extends EstadoFantasma {
     public boolean estaDigerido() {
         return false;
     }
+
+    @Override
+    public void meChocaron(Fantasma fantasma, Pacman pacman) {
+        pacman.morir();
+    }
 }

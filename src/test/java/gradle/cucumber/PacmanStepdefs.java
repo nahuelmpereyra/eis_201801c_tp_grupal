@@ -17,6 +17,7 @@ public class PacmanStepdefs {
 
 
 
+
     @Given("^Un nuevo Pacman$")
     public void nuevoPacman() throws Throwable {
         pacman = new Pacman();
@@ -102,5 +103,21 @@ public class PacmanStepdefs {
     @Then("^El pacman no muere y el fantasma deja de tener cuerpo$")
     public void elPacmanNoMuereYElFantasmaDejDeTenerCuerpo() { assertThat(pacman.vida).isEqualTo(1);}
 
+
+    @Given("^Un fantasma sin cuerpo$")
+    public void unFantasmaSinCuerpo() {
+        fantasma = new Fantasma();
+        fantasma.estado = new Digerido();
+
+    }
+
+    @When("^Pacman choca un fantasma sin cuerpo$")
+    public void pacmanChocaUnFantasmaSinCuerpo() {
+        pacman.chocar(fantasma);
+    }
+
+    @Then("^El pacman no muere$")
+    public void elPacmanNoMuere() {assertThat(pacman.vida).isEqualTo(1);
+    }
 }
 

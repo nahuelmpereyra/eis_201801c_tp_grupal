@@ -9,4 +9,10 @@ public class Digerido extends EstadoFantasma {
     public boolean estaDigerido() {
         return true;
     }
+
+    @Override
+    public void meChocaron(Fantasma fantasma, Pacman pacman) {
+
+    }
+
 }

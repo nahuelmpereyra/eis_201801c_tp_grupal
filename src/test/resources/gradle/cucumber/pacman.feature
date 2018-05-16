@@ -33,3 +33,9 @@ Scenario: Pacman choca contra un fantasma debilitado
   When Pacman come un fantasma debilitado
   Then El pacman no muere y el fantasma deja de tener cuerpo
 
+Scenario: Pacman choca contra un fantasma sin cuerpo y no muere
+  Given Un nuevo Pacman
+  Given Un fantasma sin cuerpo
+  Given Un juego nuevo
+  When Pacman choca un fantasma sin cuerpo
+  Then El pacman no muere

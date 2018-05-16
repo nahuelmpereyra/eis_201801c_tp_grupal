@@ -9,4 +9,8 @@ public class Fantasma {
     }
 
 
+    public void chocado(Pacman pacman) {
+
+        estado.meChocaron(this, pacman);
+    }
 }
